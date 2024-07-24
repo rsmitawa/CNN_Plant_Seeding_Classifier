@@ -25,11 +25,6 @@ This project implements an advanced plant species classification system using Co
    pip install -r requirements.txt
    ```
 
-4. Run the main script:
-   ```
-   python src/main.py
-   ```
-
 ## 🗃️ Dataset
 
 - **Size**: 4,750 images
@@ -37,32 +32,17 @@ This project implements an advanced plant species classification system using Co
 - **Classes**: 12 distinct plant species
 - **Distribution**: Imbalanced (221 to 654 samples per species)
 
-## 🔧 Project Structure
-
-```
-plant-species-classification/
-│
-├── data/
-│   ├── raw/                  # Raw image data
-│   └── processed/            # Preprocessed image data
-│
-├── src/
-│   ├── data_preprocessing.py # Data preprocessing scripts
-│   ├── models.py             # CNN model architectures
-│   ├── train.py              # Training script
-│   └── evaluate.py           # Evaluation script
-│
-├── notebooks/
-│   └── exploratory_analysis.ipynb
-│
-├── tests/                    # Unit tests
-│
-├── requirements.txt          # Project dependencies
-├── README.md
-└── LICENSE
-```
-
 ## 💻 Technical Approach
+
+### 🛠️ Technologies Used
+
+- TensorFlow
+- Keras
+- OpenCV
+- Pillow - Python Imaging Library
+- NumPy & Pandas
+- Matplotlib & Seaborn
+- Scikit-learn
 
 ### Data Preprocessing
 
@@ -87,15 +67,14 @@ We implemented two CNN architectures:
 | Model | Accuracy | Weighted F1-Score |
 |-------|----------|-------------------|
 | Baseline | 47% | 0.41 |
-| Advanced | 73% | 0.70 |
+| Complex CNN | 73% | 0.70 |
 
-## 🛠️ Technologies Used
+## Conclusion and key takeaways
 
-- Python
-- TensorFlow & Keras
-- NumPy & Pandas
-- Matplotlib & Seaborn
-- OpenCV
-- Scikit-learn
+- The Convnet layer in Model 2 made the model much better and reduced the number of weights it needed to learn.
+- Model 2 has a good F1-score, with a big drop in False Negatives and a small rise in False Positives.
+- Both models did poorly for class 0, so a closer look at this class is needed.
+- The final model has an accuracy of 73% and a weighted F1-score of 70%.
+- Model 2 performs best on classes 10, 6, and 3, correctly recalling over 90% of them on the test set.
 
 ---
